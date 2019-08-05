@@ -25,7 +25,8 @@ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 ```
 
 ## Notes
-* packages are auto-completed from the local cache for efficiency, 
+* Packages are auto-completed from the local cache for efficiency,
 so this does not work for new packages
-* zsh completion uses bashcompinit
-* it should theorically work on cygwin, but it has not been tested yet
+* Zsh completion uses bashcompinit
+* Cygwin is theorically supported, but this has not been tested yet
+* `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish. See `elm-json completions --help`.
