@@ -29,4 +29,5 @@ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 so this does not work for new packages.
 * Zsh completion uses bashcompinit.
 * Cygwin is theorically supported, but this has not been tested yet.
-* `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish. See `elm-json completions --help`.
+* `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish.  
+See `elm-json completions --help`.
