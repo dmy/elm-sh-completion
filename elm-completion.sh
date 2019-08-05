@@ -258,6 +258,6 @@ complete -o bashdefault -o default -F _elm_test elm-test
 
 # Cygwin compat
 if [ Cygwin = "$(uname -o 2>/dev/null)" ]; then
-    complete -o default -F _elm elm.exe
-    complete -o default -F _elm elm-json.exe
+    complete -o bashdefault -o default -F _elm elm.exe
+    complete -o bashdefault -o default -F _elm_json elm-json.exe
 fi
