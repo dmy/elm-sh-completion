@@ -18,7 +18,7 @@ sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/el
 
 For example:
 ```sh
-mkdip -p ~/.bash
+mkdir -p ~/.bash
 cd ~/.bash
 git clone https://github.com/dmy/elm-sh-completion.git
 echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
