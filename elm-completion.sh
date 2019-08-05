@@ -93,24 +93,17 @@ _elm_json ()
     local previous_arg="$3"
 
     local command=""
-    find_command help install new tree uninstall upgrade
+    find_command help install new tree uninstall upgrade solve completions
     if find_command -h --help -V --version; then
         return 0
     fi
 
     case "$command" in
         help)
-            flags "$@" 'install new tree uninstall upgrade'
+            flags "$@" 'install new tree uninstall upgrade solve completions'
             ;;
         install)
-            case "$word" in
-                */*@*)
-                    packages_with_version "$word" '--help --test --yes'
-                    ;;
-                *)
-                    packages "$word" '--help --test --yes'
-                    ;;
-            esac
+            packages "$word" '--help --test --yes'
             ;;
         new)
             ;;
@@ -123,8 +116,21 @@ _elm_json ()
         upgrade)
             flags "$@" "--help --unsafe --yes"
             ;;
+        solve)
+            case "$previous_arg" in
+                -e|--extra)
+                    packages "$word"
+                    ;;
+                *)
+                    flags "$@" '--help --minimize --test --extra'
+                    ;;
+            esac
+            ;;
+        completions)
+            flags "$@" 'bash zsh fish'
+            ;;
         *)
-            flags "$@" 'help --help --version --verbose install new tree uninstall upgrade'
+            flags "$@" 'help --help --version --verbose install new tree uninstall upgrade solve completions'
             ;;
     esac
 }
@@ -211,18 +217,15 @@ packages ()
 {
     local word="$1"
     local additional_matches="$2"
-    local packages=$(cd "${packages_dir}" && echo */*)
-    packages="${packages} ${additional_matches}"
-    COMPREPLY=($(compgen -W "$packages" -- "$word"))
-}
-
-# $1: pattern word
-# $2: additional completion results to add to packages
-packages_with_version ()
-{
-    local word="$1"
-    local additional_matches="$2"
-    local packages=$(cd "${packages_dir}" && echo */*/* | sed 's/\/\([0-9]\)/@\1/g')
+    local packages=""
+    case "$word" in
+        */*@*)
+            packages=$(cd "${packages_dir}" && echo */*/* | sed 's/\/\([0-9]\)/@\1/g')
+            ;;
+        *)
+            packages=$(cd "${packages_dir}" && echo */*)
+            ;;
+    esac
     packages="${packages} ${additional_matches}"
     COMPREPLY=($(compgen -W "$packages" -- "$word"))
 }
