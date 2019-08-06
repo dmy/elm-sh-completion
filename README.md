@@ -5,7 +5,7 @@
 * elm-json
 * elm-test
 
-## Install
+## Install Bash/Zsh completion
 To install, two options:
  
 ### 1. Add the file in /etc/bash_completion.d/ if it exists on your system:
@@ -22,6 +22,13 @@ mkdir -p ~/.bash
 cd ~/.bash
 git clone https://github.com/dmy/elm-sh-completion.git
 echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
+```
+
+## Install Fish completion
+
+```sh
+mkdir -p $fish_complete_path[1]
+cp elm.fish $fish_complete_path[1]/elm.fish
 ```
 
 ## Notes
