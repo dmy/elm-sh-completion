@@ -25,8 +25,16 @@ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 ```
 
 ## Notes
+* Packages are also matched from partial match, so you can complete packages
+by using the package name or part of it, for example:
+```
+elm ins[TAB]
+elm install regex[TAB]
+elm install elm/regex
+```
+If there are several matches, the common prefix of all matches will be completed.
 * Packages are auto-completed from the local cache for efficiency,
-so this does not work for new packages.
+so packages that have never been installed are not completed.
 * Zsh completion uses bashcompinit.
 * Cygwin is theorically supported, but this has not been tested yet.
 * `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish.  

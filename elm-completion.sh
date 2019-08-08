@@ -220,14 +220,22 @@ packages ()
     local packages=""
     case "$word" in
         */*@*)
+            # Match packages with version after @
             packages=$(cd "${packages_dir}" && echo */*/* | sed 's/\/\([0-9]\)/@\1/g')
+            packages="${packages} ${additional_matches}"
+            COMPREPLY=($(compgen -W "$packages" -- "$word"))
             ;;
         *)
+            # Match packages with author names
             packages=$(cd "${packages_dir}" && echo */*)
+            packages="${packages} ${additional_matches}"
+            COMPREPLY=($(compgen -W "$packages" -- "$word"))
+            if [ ${#COMPREPLY[@]} -eq 0 ]; then
+                # Match packages from partial matches
+                COMPREPLY=($(cd "${packages_dir}" && echo */* | tr ' ' '\n' | grep "$word"))
+            fi
             ;;
     esac
-    packages="${packages} ${additional_matches}"
-    COMPREPLY=($(compgen -W "$packages" -- "$word"))
 }
 
 # $1: package
