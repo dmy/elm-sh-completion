@@ -1,4 +1,4 @@
-# Bash/Zsh completion scripts for Elm binary and tools
+# Bash/Zsh completion script for Elm binary and tools
 
 ## Supported tools
 * elm
