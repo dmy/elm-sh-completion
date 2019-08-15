@@ -40,6 +40,10 @@ fi
 ##
 _elm ()
 {
+    if [ ! -d "$packages_dir" ]; then
+        return 0;
+    fi
+
     local word="$2"
     local previous_arg="$3"
     case "${COMP_WORDS[1]}" in
@@ -89,6 +93,10 @@ _elm ()
 ##
 _elm_json ()
 {
+    if [ ! -d "$packages_dir" ]; then
+        return 0;
+    fi
+
     local word="$2"
     local previous_arg="$3"
 
@@ -142,6 +150,10 @@ _elm_json ()
 ##
 _elm_test ()
 {
+    if [ ! -d "$packages_dir" ]; then
+        return 0;
+    fi
+
     local word="$2"
     local previous_arg="$3"
     case "${previous_arg}" in

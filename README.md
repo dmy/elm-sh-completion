@@ -6,7 +6,16 @@
 * [elm-test](https://www.npmjs.com/package/elm-test)
 
 ## Install
-To install, two options:
+To install, there are two options:
+* using `/etc/bash_completion.d`
+* using `.bashrc`
+
+Whatever the method, be sure that the script is sourced after
+potential `$PATH` settings that allow to find the `elm` command
+as the completion script needs to be able to run `elm --version`.
+
+It might be easier using `.bashrc` if you install `elm` using `npm`.
+
  
 ### 1. Add the file in /etc/bash_completion.d/ if it exists on your system:
 
