@@ -25,7 +25,7 @@
 # Elm home and packages directory
 #
 ##
-elm_version="$(elm --version)"
+elm_version="$(elm --version 2>/dev/null)"
 elm_home="${ELM_HOME:-$HOME/.elm}/${elm_version}"
 if [ "${elm_version}" = "0.19.0" ]; then
     packages_dir="${elm_home}/package"
@@ -171,7 +171,7 @@ _elm_test ()
 #
 ##
 
-# Set command variable to the command found in any
+# Set command variable to the command found if any
 # $@: list of commands
 find_command ()
 {
