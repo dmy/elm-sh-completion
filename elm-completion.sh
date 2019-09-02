@@ -26,6 +26,11 @@
 #
 ##
 elm_version="$(elm --version 2>/dev/null)"
+if [ $? -ne 0 ]; then
+    echo "elm-sh-completion error: cannot run 'elm --version'"
+    echo "Please check that elm command is available from PATH."
+    return 1
+fi
 elm_home="${ELM_HOME:-$HOME/.elm}/${elm_version}"
 if [ "${elm_version}" = "0.19.0" ]; then
     packages_dir="${elm_home}/package"
