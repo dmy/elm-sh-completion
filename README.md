@@ -17,13 +17,14 @@ as the completion script needs to be able to run `elm --version`.
 It might be easier using `.bashrc` if you install `elm` using `npm`.
 
  
-### 1. Add the file in /etc/bash_completion.d/ if it exists on your system:
+### Option 1: Add the file to /etc/bash_completion.d/
+If `/etc/bash_completion.d` exists on your system:
 
 ```sh
 sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 ```
 
-### 2. Source the file from your ~/.bashrc
+### Option 2: Source the file from your ~/.bashrc
 
 For example:
 ```sh
