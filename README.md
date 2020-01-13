@@ -39,8 +39,8 @@ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 by using the package name or part of it, for example:
 ```
 elm ins[TAB]
-elm install regex[TAB]
-elm install elm/regex
+elm install metadata[TAB]
+elm install elm/project-metadata-utils
 ```
 If there are several matches, the common prefix of all matches will be completed.
 * Packages are auto-completed from the local cache for efficiency,
