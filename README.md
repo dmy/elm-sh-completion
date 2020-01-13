@@ -67,8 +67,11 @@ alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
 ```
 
 ## Notes
-* To get case insensitive bash completion, add `set completion-ignore-case on` to `~/.inputrc`.
+* To get case insensitive bash completion, add `set completion-ignore-case on`
+in user `~/.inputrc` (which should start by `$include /etc/inputrc`) or
+system wide `/etc/inputrc`.
 * Zsh completion uses bashcompinit.
 * Cygwin is theorically supported, but this has not been tested yet.
-* `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish.  
+* `elm-json` also comes with basic auto-generated completion scripts for bash,
+zsh and fish.  
 See `elm-json completions --help`.
