@@ -33,7 +33,9 @@ Whatever the method, be sure that the script is sourced after
 potential `$PATH` settings that allow to find the `elm` command
 as the completion script needs to be able to run `elm --version`.
 
-It might be easier using `.bashrc` if you install `elm` using `npm`.
+It might be easier using `.bashrc` if you install `elm` globally using `npm`
+or `nvm`, because node paths are often defined by default after completion
+scripts are loaded.
 
  
 ### Option 1: Add the file to `bash_completion.d`
