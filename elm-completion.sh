@@ -121,15 +121,16 @@ _elm_json ()
             packages "$word" '--help --test --yes'
             ;;
         new)
+            flags "$@" '--help'
             ;;
         tree)
-            flags "$@" '' '--test'
+            flags "$@" '' '--help --test'
             ;;
         uninstall)
             packages "$word" '--help --yes'
             ;;
         upgrade)
-            flags "$@" "--help --unsafe --yes"
+            flags "$@" '--help --unsafe --yes'
             ;;
         solve)
             case "$previous_arg" in
@@ -142,7 +143,7 @@ _elm_json ()
             esac
             ;;
         completions)
-            flags "$@" 'bash zsh fish'
+            flags "$@" '--help bash zsh fish'
             ;;
         *)
             flags "$@" 'help --help --version --verbose install new tree uninstall upgrade solve completions'
