@@ -1,6 +1,12 @@
 # Bash/Zsh completion script for Elm binary and tools
 
-Example:
+## Supported tools
+* [elm 0.19](https://guide.elm-lang.org/install.html)
+* [elm-json](https://www.npmjs.com/package/elm-json)
+* [elm-test](https://www.npmjs.com/package/elm-test)
+
+
+## Example
 ```sh
 elm ins[TAB]
 elm install
@@ -17,11 +23,6 @@ Non-prefix matches are supported with Bash:
 elm install webgl[TAB]
 elm install elm-explorations/webgl
 ```
-
-## Supported tools
-* [elm 0.19](https://guide.elm-lang.org/install.html)
-* [elm-json](https://www.npmjs.com/package/elm-json)
-* [elm-test](https://www.npmjs.com/package/elm-test)
 
 ## Install
 To install, there are two options:
