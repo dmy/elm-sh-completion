@@ -1,5 +1,14 @@
 # Bash/Zsh completion script for Elm binary and tools
 
+Example:
+```sh
+elm ins[TAB]
+elm install
+
+elm install metadata[TAB]
+elm install elm/project-metadata-utils
+```
+
 ## Supported tools
 * [elm 0.19](https://guide.elm-lang.org/install.html)
 * [elm-json](https://www.npmjs.com/package/elm-json)
@@ -34,17 +43,22 @@ git clone https://github.com/dmy/elm-sh-completion.git
 echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 ```
 
+## Updating the packages list
+Because packages are completed from elm local registry, any `elm` command using
+it will update the list automatically, including `elm init`, `elm install`,
+`elm diff`. 
+
+You will therefore usually not need to worry about updating the list.
+
+If you want anyway a command to force the update of the packages list, you can
+for example define the following bash alias in your `/.bashrc`:
+```sh
+alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
+```
+
 ## Notes
-* Packages are also matched from partial match, so you can complete packages
-by using the package name or part of it, for example:
-```
-elm ins[TAB]
-elm install metadata[TAB]
-elm install elm/project-metadata-utils
-```
-If there are several matches, the common prefix of all matches will be completed.
-* Packages are auto-completed from the local cache for efficiency,
-so packages that have never been installed are not completed.
+* Partial packages matches are supported.
+* If there are several matches, the common prefix of all matches will be completed.
 * Zsh completion uses bashcompinit.
 * Cygwin is theorically supported, but this has not been tested yet.
 * `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish.  
