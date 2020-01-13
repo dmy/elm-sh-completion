@@ -57,6 +57,7 @@ alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
 ```
 
 ## Notes
+* To get case insensitive bash completion, add `set completion-ignore-case on` to `~/.inputrc`.
 * Partial packages matches are supported.
 * If there are several matches, the common prefix of all matches will be completed.
 * Zsh completion uses bashcompinit.
