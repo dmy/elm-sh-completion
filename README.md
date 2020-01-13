@@ -1,7 +1,7 @@
 # Bash/Zsh completion script for Elm binary and tools
 
 ## Supported tools
-* [elm](https://guide.elm-lang.org/install.html)
+* [elm 0.19](https://guide.elm-lang.org/install.html)
 * [elm-json](https://www.npmjs.com/package/elm-json)
 * [elm-test](https://www.npmjs.com/package/elm-test)
 

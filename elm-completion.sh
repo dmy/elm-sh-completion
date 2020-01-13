@@ -34,8 +34,10 @@ fi
 elm_home="${ELM_HOME:-$HOME/.elm}/${elm_version}"
 if [ "${elm_version}" = "0.19.0" ]; then
     packages_dir="${elm_home}/package"
+    registry="${packages_dir}/versions.dat"
 else
     packages_dir="${elm_home}/packages"
+    registry="${packages_dir}/registry.dat"
 fi
  
 ##
@@ -243,13 +245,13 @@ packages ()
             COMPREPLY=($(compgen -W "$packages" -- "$word"))
             ;;
         *)
-            # Match packages with author names
-            packages=$(cd "${packages_dir}" && echo */*)
+            # Match packages with author names, without elm-lang/ ones
+            packages=$(grep -Eao '[A-Za-z0-9-]{2,}' ${registry} | paste -d "/" - - | grep -v 'elm-lang/' | uniq)
             packages="${packages} ${additional_matches}"
             COMPREPLY=($(compgen -W "$packages" -- "$word"))
             if [ ${#COMPREPLY[@]} -eq 0 ]; then
                 # Match packages from partial matches
-                COMPREPLY=($(cd "${packages_dir}" && echo */* | tr ' ' '\n' | grep -- "$word"))
+                COMPREPLY=($(echo "$packages" | grep -- "$word"))
             fi
             ;;
     esac
