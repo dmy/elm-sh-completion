@@ -1404,7 +1404,7 @@ packages ()
             COMPREPLY=($(compgen -W "$packages" -- "$word"))
             if [ ${#COMPREPLY[@]} -eq 0 ]; then
                 # Match packages from partial matches
-                COMPREPLY=($(echo "$packages" | grep -- "$word"))
+                COMPREPLY=($(echo "$packages" | grep -i -- "$word"))
             fi
             ;;
     esac
