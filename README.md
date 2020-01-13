@@ -29,9 +29,16 @@ To install, there are two options:
 * using `bash_completion.d`
 * using `.bashrc`
 
-Whatever the method, be sure that the script is sourced after
+**Whatever the method, be sure that the script is sourced after
 potential `$PATH` settings that allow to find the `elm` command
-as the completion script needs to be able to run `elm --version`.
+as the completion script needs to be able to run `elm --version`.**
+
+If `elm` command is not available when the completion script is loaded,
+you will get the following error when starting your shell:
+```
+elm-sh-completion error: cannot run 'elm --version'
+Please check that elm command is available from PATH.
+```
 
 It might be easier using `.bashrc` if you install `elm` globally using `npm`
 or `nvm`, because node paths are often defined by default after completion
@@ -69,7 +76,7 @@ it will update the list automatically, including `elm init`, `elm install`,
 You will therefore usually not need to worry about updating the list.
 
 If you want anyway a command to force the update of the packages list, you can
-for example define the following bash alias in your `/.bashrc`:
+for example define the following bash alias in your `~/.bashrc`:
 ```sh
 alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
 ```
