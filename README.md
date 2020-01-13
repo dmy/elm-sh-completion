@@ -5,8 +5,17 @@ Example:
 elm ins[TAB]
 elm install
 
-elm install metadata[TAB]
-elm install elm/project-metadata-utils
+elm install elm-ex[TAB]
+elm install elm-explorations/
+
+elm install elm-explorations/w[TAB]
+elm install elm-explorations/webgl
+```
+
+Non-prefix matches are supported with Bash:
+```
+elm install webgl[TAB]
+elm install elm-explorations/webgl
 ```
 
 ## Supported tools
@@ -46,7 +55,7 @@ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 ## Updating the packages list
 Because packages are completed from elm local registry, any `elm` command using
 it will update the list automatically, including `elm init`, `elm install`,
-`elm diff`. 
+`elm diff`.
 
 You will therefore usually not need to worry about updating the list.
 
@@ -58,8 +67,6 @@ alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
 
 ## Notes
 * To get case insensitive bash completion, add `set completion-ignore-case on` to `~/.inputrc`.
-* Partial packages matches are supported.
-* If there are several matches, the common prefix of all matches will be completed.
 * Zsh completion uses bashcompinit.
 * Cygwin is theorically supported, but this has not been tested yet.
 * `elm-json` comes with its own auto-generated completion scripts for bash, zsh and fish.  
