@@ -26,7 +26,7 @@ elm install elm-explorations/webgl
 
 ## Install
 To install, there are two options:
-* using `/etc/bash_completion.d`
+* using `bash_completion.d`
 * using `.bashrc`
 
 Whatever the method, be sure that the script is sourced after
@@ -36,14 +36,20 @@ as the completion script needs to be able to run `elm --version`.
 It might be easier using `.bashrc` if you install `elm` using `npm`.
 
  
-### Option 1: Add the file to /etc/bash_completion.d/
+### Option 1: Add the file to `bash_completion.d`
 If `/etc/bash_completion.d` exists on your system:
 
 ```sh
 sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 ```
 
-### Option 2: Source the file from your ~/.bashrc
+On MacOS X with brew, you can do:
+```
+brew install bash-completion
+sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
+```
+
+### Option 2: Source the file from your `~/.bashrc`
 
 For example:
 ```sh
