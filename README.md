@@ -27,7 +27,7 @@ elm install elm-explorations/webgl
 ## Install
 To install, there are two options:
 * using `bash_completion.d`
-* using `.bashrc`
+* using `.bashrc` or `.bash_profile`
 
 **Whatever the method, be sure that the script is sourced after
 potential `$PATH` settings that allow to find the `elm` command
@@ -58,15 +58,25 @@ brew install bash-completion
 sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 ```
 
-### Option 2: Source the file from your `~/.bashrc`
+### Option 2: Source the file from your `~/.bashrc` or `~/.bash_profile`
+
+`~/.bashrc` is usually used on Linux, `~/.bash_profile` on MacOS X.
 
 For example:
 ```sh
 mkdir -p ~/.bash
 cd ~/.bash
 git clone https://github.com/dmy/elm-sh-completion.git
+```
+then on Linux:
+```
 echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
 ```
+or on MacOS X:
+```
+echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bash_profile
+```
+
 
 ## Updating the packages list
 Because packages are completed from elm local registry, any `elm` command using

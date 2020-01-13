@@ -2,21 +2,31 @@
 #
 # bash/zsh-bashcompinit elm completion script
 #
-# Copyright (C) 2019 Rémi Lefèvre
+# Copyright (C) 2019-2020 Rémi Lefèvre
 # 
 # https://github.com/dmy/elm-sh-completion
 #
 # To install, two options:
 #   
-#   Option 1: Add the file in /etc/bash_completion.d/ if it exists on your system
+#   Option 1: Add the file to bash_completion.d
+#     If /etc/bash_completion.d exists on your system:
 #       $ sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 #
-#   Option 2: Source the file from your ~/.bashrc
-#       For example:
+#     Or on MacOS X:
+#       $ brew install bash-completion
+#       $ sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
+#
+#   Option 2: Source the file from your ~/.bashrc or ~/.bash_profile
+#     For example:
 #       $ mkdir -p ~/.bash
 #       $ cd ~/.bash
 #       $ git clone https://github.com/dmy/elm-sh-completion.git
+#
+#     Then on Linux:
 #       $ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bashrc
+#
+#     Or on MacOS X:
+#       $ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bash_profile
 #
 ##
 
