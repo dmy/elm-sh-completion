@@ -88,7 +88,7 @@ You will therefore usually not need to worry about updating the list.
 If you want anyway a command to force the update of the packages list, you can
 for example define the following bash alias in your `~/.bashrc`:
 ```sh
-alias elm-update-packages='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
+alias elm-update-registry='elm diff elm/core 1.0.0 1.0.1 > /dev/null'
 ```
 
 ## Notes
