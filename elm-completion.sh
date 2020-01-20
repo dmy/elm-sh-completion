@@ -1406,7 +1406,7 @@ packages ()
             ;;
         *)
             # Get all packages
-            packages=$(grep -Eao '[A-Za-z0-9-]{2,}' ${registry} | paste -d "/" - - | sort)
+            packages=$(strings -n 2 ${registry} | grep -Eo '[A-Za-z0-9][A-Za-z0-9-]+' | paste -d "/" - - | sort)
             # Remove old packages
             packages=$(comm -23 <(echo "$packages") <(old_packages))
 
