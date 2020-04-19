@@ -20,8 +20,8 @@ elm install elm-explorations/webgl
 
 Non-prefix matches are supported with Bash:
 ```
-elm install webgl[TAB]
-elm install elm-explorations/webgl
+elm install metadata[TAB]
+elm install elm/project-metadata-utils
 ```
 
 ## Install

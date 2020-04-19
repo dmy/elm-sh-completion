@@ -12,7 +12,7 @@
 #     If /etc/bash_completion.d exists on your system:
 #       $ sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 #
-#     Or on MacOS X:
+#     Or on MacOS X with Homebrew:
 #       $ brew install bash-completion
 #       $ sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 #
