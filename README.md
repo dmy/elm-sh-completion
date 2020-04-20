@@ -32,8 +32,8 @@ elm install mdgriffith/elm-ui
 
 ## Install
 To install, there are two options:
-* using `bash_completion.d`
-* using `.bashrc` or `.bash_profile`
+1. using `.bashrc` or `.bash_profile`
+2. using `bash_completion.d`
 
 **Whatever the method, be sure that the script is sourced after
 potential `$PATH` settings that allow to find the `elm` command
@@ -50,21 +50,7 @@ It might be easier using `.bashrc` if you install `elm` globally using `npm`
 or `nvm`, because node paths are often defined by default after completion
 scripts are loaded.
 
- 
-### Option 1: Add the file to `bash_completion.d`
-If `/etc/bash_completion.d` exists on your system:
-
-```sh
-sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
-```
-
-On MacOS X with brew, you can do:
-```
-brew install bash-completion
-sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
-```
-
-### Option 2: Source the file from your `~/.bashrc` or `~/.bash_profile`
+### Option 1: Source the file from your `~/.bashrc` or `~/.bash_profile`
 
 `~/.bashrc` is usually used on Linux, `~/.bash_profile` on MacOS X.
 
@@ -82,6 +68,20 @@ or on MacOS X:
 ```
 echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bash_profile
 ```
+
+### Option 2: Add the file to `bash_completion.d`
+If `/etc/bash_completion.d` exists on your system:
+
+```sh
+sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
+```
+
+On MacOS X with brew, you can do:
+```
+brew install bash-completion
+sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
+```
+
 
 
 ## Updating the packages list

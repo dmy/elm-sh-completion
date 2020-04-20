@@ -8,15 +8,7 @@
 #
 # To install, two options:
 #   
-#   Option 1: Add the file to bash_completion.d
-#     If /etc/bash_completion.d exists on your system:
-#       $ sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
-#
-#     Or on MacOS X with Homebrew:
-#       $ brew install bash-completion
-#       $ sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
-#
-#   Option 2: Source the file from your ~/.bashrc or ~/.bash_profile
+#   Option 1: Source the file from your ~/.bashrc or ~/.bash_profile
 #     For example:
 #       $ mkdir -p ~/.bash
 #       $ cd ~/.bash
@@ -27,6 +19,14 @@
 #
 #     Or on MacOS X:
 #       $ echo 'source ~/.bash/elm-sh-completion/elm-completion.sh' >> ~/.bash_profile
+#
+#   Option 2: Add the file to bash_completion.d
+#     If /etc/bash_completion.d exists on your system:
+#       $ sudo curl -o /etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
+#
+#     Or on MacOS X with Homebrew:
+#       $ brew install bash-completion
+#       $ sudo curl -o /usr/local/etc/bash_completion.d/elm https://raw.githubusercontent.com/dmy/elm-sh-completion/master/elm-completion.sh
 #
 ##
 
