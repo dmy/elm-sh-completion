@@ -24,6 +24,12 @@ elm install metadata[TAB]
 elm install elm/project-metadata-utils
 ```
 
+Grep basic regular expressions (BRE) are also supported:
+```
+elm install /elm-ui$[TAB]
+elm install mdgriffith/elm-ui
+```
+
 ## Install
 To install, there are two options:
 * using `bash_completion.d`
